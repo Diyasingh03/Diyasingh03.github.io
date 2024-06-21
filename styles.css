@@ -1,0 +1,96 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: whitesmoke;
+}
+
+/* Set a background color */
+body {
+    background-color: #1f1f1f;
+}
+
+/* Center the content */
+.container {
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: flex-start; /* Align content to the top */
+    height: 100vh;
+    padding: 20px; /* Add padding from the edge */
+}
+
+/* Add a card-like appearance */
+.card {
+    height: 100%;
+    width: 80%; /* Calculate the width to occupy the remaining space */
+    background-color: #262626;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(4, 62, 0, 0.627);
+    padding: 20px;
+    margin-right: 20px; /* Add margin between cards */
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto; /* Prevent card from growing */
+}
+
+/* Personal info card */
+.personal-info {
+    width: 20%; /* Set width for sidebar-like appearance */
+    height: 100%;
+    background-color: #262626;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(4, 62, 0, 0.627);
+    padding: 20px;
+    margin-right: 20px; /* Add margin between cards */
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+}
+
+/* Style headings */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style navigation */
+.card nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 100px; /* Set the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+
+.nav-links li {
+    margin: 20px;
+    
+}
+
+/* Style buttons */
+.button {
+    background-color: #1db954;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #1aa34a;
+}
