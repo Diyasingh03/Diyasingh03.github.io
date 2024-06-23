@@ -86,4 +86,17 @@
   .black-gradient {
     background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
   }
+  .purple-light-gradient {
+    background: linear-gradient(90deg,rgb(255, 255, 255) 0%, rgb(190, 144, 255) 100%);
+    /* text-shadow:0 0 15px rgb(190, 144, 255); */
+    -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+  }
+  .purple-dark-gradient {
+    background: linear-gradient(90deg,rgb(190, 144, 255) 0%, rgb(255, 255, 255) 100%);
+    /* text-shadow:0 0 15px rgb(190, 144, 255); */
+    -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+  }
+  
 }
