@@ -1,3 +1,4 @@
+import Grid from "@/components/Grid";
 import Hero from "@/components/hero";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import Image from "next/image";
@@ -9,7 +10,7 @@ export default function Home() {
       <div className="max-w-7xl w-full">
         <FloatingNav navItems={[{name: 'Home', link: '/', icon: <FaHome/>}]} />
         <Hero />
-        
+        <Grid />
       </div>
     </main>
   );
