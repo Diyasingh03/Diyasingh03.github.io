@@ -354,6 +354,8 @@
   padding-top: 6px;
 }
 .tool-row .chips { margin-top: 0; }
+.tool-key-link { transition: color 0.2s; }
+.tool-key-link:hover { color: var(--pink); text-decoration: underline; text-underline-offset: 4px; }
 
 /* ============================================================
    §05 EDUCATION
