@@ -1,0 +1,42 @@
+/* ============================================================
+   DESIGN TOKENS — "The Plotter's Notebook", pastel edition
+   Ground: warm cream / lavender / blush sheets. Inks: pastel
+   pink, purple, blue, with orange-gold gilding. Plum ink text.
+   Every color on the site must come from these variables.
+   ============================================================ */
+:root {
+  /* grounds — the majority of the page */
+  --paper:      #ffefcb;   /* warm cream ground             */
+  --paper-alt:  #e0cef4;   /* pastel lavender sheet         */
+  --paper-card: #ffe8e8;   /* blush card sheet              */
+
+  /* text inks */
+  --ink:        #2a2140;   /* plum ink — headings, body     */
+  --ink-soft:   #5a4e80;   /* diluted plum — secondary copy */
+
+  /* accent inks */
+  --pink:       #d76fa7;   /* art ink — annotations, "now"  */
+  --purple:     #8b6ed0;   /* logic ink — links, badges     */
+  --blue:       #5b8ed6;   /* structure ink — curves, dots  */
+  --yellow:     #e78a00;   /* gilding — honors, certs       */
+
+  /* soft fills (for washes behind shapes) */
+  --pink-wash:   rgba(215, 111, 167, 0.12);
+  --purple-wash: rgba(139, 110, 208, 0.12);
+  --blue-wash:   rgba(91, 142, 214, 0.12);
+
+  /* rules & grid */
+  --line:       rgba(67, 58, 89, 0.18);
+  --line-soft:  rgba(67, 58, 89, 0.10);
+  --grid:       rgba(139, 110, 208, 0.08);
+  --grid-major: rgba(139, 110, 208, 0.14);
+
+  /* type */
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  /* misc */
+  --shadow-print: 5px 5px 0 rgba(139, 110, 208, 0.16);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --container: 1120px;
+}

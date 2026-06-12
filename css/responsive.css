@@ -1,0 +1,32 @@
+/* ============================================================
+   RESPONSIVE + REDUCED MOTION
+   ============================================================ */
+
+@media (max-width: 920px) {
+  .about-grid { grid-template-columns: 1fr; gap: 44px; }
+  .works-grid { grid-template-columns: 1fr; }
+  .work-wide { flex-direction: column; }
+  .work-wide .work-plot { width: 100%; border-right: none; border-bottom: 1px solid var(--line); aspect-ratio: 16 / 10; min-height: 0; }
+  .edu-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .margin-rule { left: 22px; }
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .section { padding: 80px 0; }
+  .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+  .tl-when { text-align: left; flex-direction: row; align-items: center; padding-left: 36px; }
+  .tl-what { padding-left: 36px; padding-bottom: 44px; }
+  .tool-row { grid-template-columns: 1fr; gap: 12px; }
+  .teach-item { grid-template-columns: 1fr; gap: 8px; }
+  .scroll-cue { display: none; }
+  .work-wide .work-body { padding: 26px 28px 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .ticker-track { animation: none; }
+  .typed-caret, .scroll-cue i { animation: none; }
+}
