@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diya Singh — art ∩ logic</title>
+  <meta name="description" content="Diya Singh — M.S. Computer Science @ Purdue. Machine learning engineer with an Art & Design minor. Where logic draws and art computes." />
+  <meta property="og:title" content="Diya Singh — art ∩ logic" />
+  <meta property="og:description" content="ML engineer · researcher · designer · teacher. M.S. CS @ Purdue." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- notebook margin rule -->
+  <div class="margin-rule" aria-hidden="true"></div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo"><em>D.</em>Singh</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link"><sup>01</sup>Abstract</a></li>
+        <li><a href="#works" class="nav-link"><sup>02</sup>Works</a></li>
+        <li><a href="#chronology" class="nav-link"><sup>03</sup>Chronology</a></li>
+        <li><a href="#toolbox" class="nav-link"><sup>04</sup>Toolbox</a></li>
+        <li><a href="#education" class="nav-link"><sup>05</sup>Education</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">Contact ↗</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about"><sup>01</sup> Abstract</a></li>
+      <li><a href="#works"><sup>02</sup> Works</a></li>
+      <li><a href="#chronology"><sup>03</sup> Chronology</a></li>
+      <li><a href="#toolbox"><sup>04</sup> Toolbox</a></li>
+      <li><a href="#education"><sup>05</sup> Education</a></li>
+      <li><a href="#teaching"><sup>06</sup> Teaching</a></li>
+      <li><a href="#honors"><sup>07</sup> Honors</a></li>
+      <li><a href="#contact"><sup>08</sup> Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== HERO · fig. 0 ===== -->
+  <header id="hero" class="hero">
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+
+    <div class="hero-content">
+      <p class="hero-kicker reveal">fig. 0 — <em>a self-portrait, computed</em></p>
+      <h1 class="hero-name reveal">
+        Diya<br /><span class="hero-name-line2">Singh<span class="hero-asterisk">*</span></span>
+      </h1>
+      <p class="hero-thesis reveal">
+        I study <strong>computer science</strong> and minor in <strong>art &amp; design</strong>
+        and <strong>mathematics</strong> — so I build machine-learning systems
+        the way a painter mixes pigment: <em>precisely, and on purpose.</em>
+      </p>
+      <p class="hero-typed-line reveal">
+        <span class="typed-prefix">currently&nbsp;</span><span id="typedText"></span><span class="typed-caret">▌</span>
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#works" class="btn btn-ink">Selected works ↓</a>
+        <a href="Diya_Singh_Resume.pdf" target="_blank" rel="noopener" class="btn btn-line">Résumé · PDF</a>
+      </div>
+      <p class="hero-socials reveal">
+        <a href="https://github.com/Diyasingh03" target="_blank" rel="noopener">GitHub</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://linkedin.com/in/diyasingh03" target="_blank" rel="noopener">LinkedIn</a>
+        <span aria-hidden="true">·</span>
+        <a href="mailto:singhdiya2004@gmail.com">singhdiya2004@gmail.com</a>
+      </p>
+    </div>
+
+    <p class="hero-footnote reveal">* the curves behind this page are drawn live by a flow field — refresh for a new edition</p>
+
+    <div class="scroll-cue" aria-hidden="true"><span>scroll</span><i></i></div>
+  </header>
+
+  <!-- ===== TICKER ===== -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Purdue CS, Honors</span><i>✳</i><span>M.S. by 2027</span><i>✳</i><span>art &amp; design minor</span><i>✳</i><span>mathematics minor</span><i>✳</i><span>HackMIT finalist</span><i>✳</i><span>2M+ reviews mined</span><i>✳</i><span>400 students taught</span><i>✳</i><span>8 internships &amp; research roles</span><i>✳</i>
+      <span>Purdue CS, Honors</span><i>✳</i><span>M.S. by 2027</span><i>✳</i><span>art &amp; design minor</span><i>✳</i><span>mathematics minor</span><i>✳</i><span>HackMIT finalist</span><i>✳</i><span>2M+ reviews mined</span><i>✳</i><span>400 students taught</span><i>✳</i><span>8 internships &amp; research roles</span><i>✳</i>
+    </div>
+  </div>
+
+  <!-- ===== §01 ABSTRACT ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-no">§ 01</span>
+        <h2>Abstract</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="lede">
+            Most people pick a side: the studio or the lab.
+            <em>I kept both keys.</em>
+          </p>
+          <p>
+            I'm an M.S. Computer Science student at <strong>Purdue University</strong> (B.S. CS Honors '26,
+            M.S. '27) focused on artificial intelligence, machine learning, and deep learning. My undergrad
+            concentrations run from <strong>machine intelligence</strong> to <strong>computer graphics</strong>
+            to <strong>systems software</strong> — and my minors in <strong>art &amp; design</strong> and
+            <strong>mathematics</strong> are not a contradiction; they're the method.
+          </p>
+          <p>
+            The pattern in my work: take something messy and human — 2&nbsp;million walkability reviews, a
+            company's email triage, a card game's luck — and give it structure a machine can reason about,
+            then give the machine an interface a human actually wants to touch. I've shipped that loop at
+            <strong>Envita Solutions</strong>, <strong>FractalHive</strong>, <strong>Haleon</strong>, and in
+            research at Purdue, and I teach it every Friday to a lecture hall of 400 as
+            <strong>Head TA of CS180</strong>.
+          </p>
+          <div class="venn reveal" aria-label="Venn diagram: art intersect logic equals me">
+            <svg viewBox="0 0 300 150" role="img">
+              <circle cx="110" cy="75" r="62" class="venn-a" />
+              <circle cx="190" cy="75" r="62" class="venn-b" />
+              <text x="78" y="80" class="venn-label">art</text>
+              <text x="194" y="80" class="venn-label">logic</text>
+              <text x="150" y="80" class="venn-me">me</text>
+            </svg>
+          </div>
+        </div>
+
+        <aside class="about-aside reveal">
+          <h3 class="aside-title">at a glance</h3>
+          <dl class="fact-list">
+            <div><dt>degree</dt><dd>B.S. + M.S. CS, Purdue</dd></div>
+            <div><dt>focus</dt><dd>AI · ML · deep learning</dd></div>
+            <div><dt>minors</dt><dd>art &amp; design, math</dd></div>
+            <div><dt>roles</dt><dd>8 internships + research</dd></div>
+            <div><dt>teaching</dt><dd>head TA, 400 students</dd></div>
+            <div><dt>publication</dt><dd>walkability ecosystem, in&nbsp;prep</dd></div>
+            <div><dt>status</dt><dd class="fact-now">AI/ML intern @ Envita</dd></div>
+          </dl>
+          <p class="aside-note">↑ verified against the résumé, june 2026</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== §02 SELECTED WORKS ===== -->
+  <section id="works" class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-no">§ 02</span>
+        <h2>Selected works</h2>
+        <p class="section-sub">each figure is plotted live by the algorithm named beneath it — click a drawing to re-roll its seed</p>
+      </div>
+
+      <div class="works-grid">
+
+        <!-- Bloom -->
+        <article class="work-card work-wide reveal">
+          <div class="work-plot">
+            <canvas data-plot="rose" aria-label="Generative rose curve drawing"></canvas>
+            <span class="plot-caption">fig. 1 — rose curve, r = cos(kθ)</span>
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span class="work-date">may 2026</span><span class="work-badge">featured</span></div>
+            <h3><a href="https://github.com/Diyasingh03/bloom" target="_blank" rel="noopener">Bloom — AI-powered PCOS management <span class="arrow">↗</span></a></h3>
+            <p>
+              A cycle-aware iOS app (React Native + Expo) that uses Gemini 2.5 Flash to generate daily meal and
+              workout plans tuned to PCOS phase, pantry stock, and real equipment. Cycle prediction via
+              exponential-decay-weighted averaging over six prior cycles with confidence intervals; imports Flo
+              data; one daily AI call with a graceful static fallback so it works offline and inside free-tier limits.
+            </p>
+            <ul class="chips">
+              <li>React Native</li><li>Expo</li><li>Gemini 2.5</li><li>iOS</li><li>health</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Animal Detection -->
+        <article class="work-card reveal">
+          <div class="work-plot">
+            <canvas data-plot="detect" aria-label="Generative bounding-box drawing"></canvas>
+            <span class="plot-caption">fig. 2 — detections under corruption</span>
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span class="work-date">dec 2025</span></div>
+            <h3><a href="https://github.com/Diyasingh03/CS573-Final" target="_blank" rel="noopener">Animal detection under corruption <span class="arrow">↗</span></a></h3>
+            <p>
+              Fine-tuned and benchmarked YOLO, Mask R-CNN, and RT-DETR on 9 animal classes from Open Images
+              under Gaussian blur and JPEG compression. RT-DETR won: best baseline mAP@0.5 (0.788) and the
+              smallest high-blur degradation (−11.2% vs −17.7% for YOLO).
+            </p>
+            <ul class="chips"><li>PyTorch</li><li>RT-DETR</li><li>YOLO</li><li>Mask R-CNN</li></ul>
+          </div>
+        </article>
+
+        <!-- Flip7 -->
+        <article class="work-card reveal">
+          <div class="work-plot">
+            <canvas data-plot="tree" aria-label="Generative decision tree drawing"></canvas>
+            <span class="plot-caption">fig. 3 — expected-value tree</span>
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span class="work-date">dec 2025</span></div>
+            <h3><a href="https://github.com/kraisr/Flip7-AI" target="_blank" rel="noopener">Flip7 AI agent <span class="arrow">↗</span></a></h3>
+            <p>
+              A dynamic-programming hit/stay agent for the Flip 7 card game: memoized, deck-weighted expected
+              values at every state, action by argmax. Pivoted from Q-learning after diagnosing multi-agent reward
+              instability — the DP agent matched human win rate (50%) over 182 evaluated rounds.
+            </p>
+            <ul class="chips"><li>Python</li><li>dynamic programming</li><li>game theory</li></ul>
+          </div>
+        </article>
+
+        <!-- ReadCoin -->
+        <article class="work-card reveal">
+          <div class="work-plot">
+            <canvas data-plot="lissajous" aria-label="Generative Lissajous curve drawing"></canvas>
+            <span class="plot-caption">fig. 4 — gaze trace, lissajous</span>
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span class="work-date">sep 2024</span><span class="work-badge work-badge-red">HackMIT finalist</span></div>
+            <h3><a href="https://github.com/Arwin-S/hackmit2024" target="_blank" rel="noopener">ReadCoin <span class="arrow">↗</span></a></h3>
+            <p>
+              A reading app that watches you read: real-time eye-tracking drives auto-scroll and pays out
+              incentives per line read. React + Python over WebSockets, built in 24 hours, finalist at HackMIT.
+            </p>
+            <ul class="chips"><li>React</li><li>Python</li><li>WebSockets</li><li>eye tracking</li></ul>
+          </div>
+        </article>
+
+        <!-- Live streaming -->
+        <article class="work-card reveal">
+          <div class="work-plot">
+            <canvas data-plot="signal" aria-label="Generative signal waveform drawing"></canvas>
+            <span class="plot-caption">fig. 5 — throughput traces</span>
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span class="work-date">apr – may 2025</span></div>
+            <h3>Live streaming system</h3>
+            <p>
+              Real-time streaming in Docker containers on a public GCP VM. Automated pcap capture and analytics
+              across network conditions in Python, with statistical reports and matplotlib/seaborn visualizations.
+            </p>
+            <ul class="chips"><li>Docker</li><li>GCP</li><li>Python</li><li>networking</li></ul>
+          </div>
+        </article>
+
+        <!-- Procedural tree -->
+        <article class="work-card reveal">
+          <div class="work-plot">
+            <canvas data-plot="lsystem" aria-label="Generative L-system tree drawing"></canvas>
+            <span class="plot-caption">fig. 6 — L-system, 7 generations</span>
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span class="work-date">2025</span></div>
+            <h3><a href="https://github.com/Diyasingh03/Procedural3DTree" target="_blank" rel="noopener">Procedural 3D tree <span class="arrow">↗</span></a></h3>
+            <p>
+              Trees grown from grammar: L-systems and turtle graphics in C++17/OpenGL with a real-time turntable,
+              ImGui controls, and procedural leaves and flowers — no textures, only rules.
+            </p>
+            <ul class="chips"><li>C++17</li><li>OpenGL</li><li>L-systems</li><li>graphics</li></ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== §03 CHRONOLOGY ===== -->
+  <section id="chronology" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-no">§ 03</span>
+        <h2>Chronology</h2>
+        <p class="section-sub">internships &amp; research, newest first</p>
+      </div>
+
+      <ol class="timeline">
+
+        <li class="timeline-item reveal">
+          <div class="tl-when">may – aug 2026<span class="tl-now">now</span></div>
+          <div class="tl-what">
+            <h3>AI &amp; ML Automation Intern <span class="tl-org">— Envita Solutions</span></h3>
+            <ul>
+              <li>Replatformed an AI email classification &amp; extraction pipeline that auto-creates customer request records and routes them to the database.</li>
+              <li>Pushed accuracy from 92% to &gt;95%, beating the prior Power Automate flow and manual scheduling.</li>
+              <li>Replaced the flow with an auditable system that cuts manual triage and surfaces edge cases for human review.</li>
+            </ul>
+            <ul class="chips chips-sm"><li>LLMs</li><li>classification</li><li>automation</li></ul>
+          </div>
+        </li>
+
+        <li class="timeline-item reveal">
+          <div class="tl-when">jul – sep 2025</div>
+          <div class="tl-what">
+            <h3>Product Development Intern <span class="tl-org">— FractalHive</span></h3>
+            <ul>
+              <li>Delivered a responsive audit web app for an education-sector client, cutting manual processing time 30%.</li>
+              <li>Designed an end-to-end schema with validation and multi-level access control; built role-specific dashboards for relationship managers and underwriters in a B2B commercial-banking platform.</li>
+            </ul>
+            <ul class="chips chips-sm"><li>React</li><li>SQL</li><li>B2B SaaS</li></ul>
+          </div>
+        </li>
+
+        <li class="timeline-item reveal">
+          <div class="tl-when">jan 2025 – present</div>
+          <div class="tl-what">
+            <h3>Interdisciplinary Research Intern <span class="tl-org">— DUIRI, Purdue</span></h3>
+            <ul>
+              <li>Engineered an AI walkability assistant informed by LDA topic modeling over 2M+ user reviews in Python.</li>
+              <li>Led user-centered design and prototype testing; feedback integration lifted engagement 25%.</li>
+              <li>Manuscript in preparation: <em>"AI-Driven Walkability Ecosystem: Enhancing Public Health through Personalized, Social, and Adaptive Mobility Solutions."</em></li>
+            </ul>
+            <ul class="chips chips-sm"><li>NLP</li><li>LDA</li><li>UX research</li></ul>
+          </div>
+        </li>
+
+        <li class="timeline-item reveal">
+          <div class="tl-when">jul – aug 2024</div>
+          <div class="tl-what">
+            <h3>Machine Learning Intern <span class="tl-org">— Haleon · Centrum</span></h3>
+            <ul>
+              <li>Architected an end-to-end facial-recognition diagnostic for nutrient deficiency — system architecture, Firebase schema, and the ML pipeline, in Flutter and Python.</li>
+              <li>Agile sprints with weekly stakeholder feedback improved feature accuracy 20%.</li>
+            </ul>
+            <ul class="chips chips-sm"><li>computer vision</li><li>Flutter</li><li>Firebase</li></ul>
+          </div>
+        </li>
+
+        <li class="timeline-item reveal">
+          <div class="tl-when">may – jul 2024</div>
+          <div class="tl-what">
+            <h3>Machine Learning Intern <span class="tl-org">— NRoad</span></h3>
+            <ul>
+              <li>Built a finance-document parsing model and REST API on a microservice architecture with FastAPI, SQLAlchemy, and MySQL.</li>
+            </ul>
+            <ul class="chips chips-sm"><li>FastAPI</li><li>SQLAlchemy</li><li>MySQL</li></ul>
+          </div>
+        </li>
+
+        <li class="timeline-item reveal">
+          <div class="tl-when">aug 2023 – jan 2024</div>
+          <div class="tl-what">
+            <h3>Undergraduate Researcher <span class="tl-org">— Dr. Wenzhuo Wu's Lab, Purdue</span></h3>
+            <ul>
+              <li>Built TinyML models for wearable sensors tracking athletic performance and recovery.</li>
+              <li>Modeled a digital screen printer in Unity, cutting resource waste 30% and testing time 35%; presented at the Purdue research expo.</li>
+            </ul>
+            <ul class="chips chips-sm"><li>TinyML</li><li>Unity</li><li>wearables</li></ul>
+          </div>
+        </li>
+
+        <li class="timeline-item reveal">
+          <div class="tl-when">jun – aug 2023</div>
+          <div class="tl-what">
+            <h3>Machine Learning Intern <span class="tl-org">— Indium Software</span></h3>
+            <ul>
+              <li>Benchmarked 10 Hugging Face LLMs for finance and healthcare; the evaluation report improved model-selection accuracy 25%.</li>
+            </ul>
+            <ul class="chips chips-sm"><li>Hugging Face</li><li>LLM evaluation</li></ul>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== §04 TOOLBOX ===== -->
+  <section id="toolbox" class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-no">§ 04</span>
+        <h2>Toolbox</h2>
+      </div>
+
+      <div class="tool-sheet reveal">
+        <div class="tool-row">
+          <span class="tool-key">languages</span>
+          <ul class="chips"><li>Python</li><li>Java</li><li>C / C++</li><li>SQL</li><li>JavaScript</li><li>MATLAB</li><li>Bash</li></ul>
+        </div>
+        <div class="tool-row">
+          <span class="tool-key">ml &amp; data</span>
+          <ul class="chips"><li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>pandas</li><li>numpy</li><li>nltk</li><li>matplotlib</li><li>seaborn</li><li>Hugging Face</li></ul>
+        </div>
+        <div class="tool-row">
+          <span class="tool-key">apps &amp; apis</span>
+          <ul class="chips"><li>React</li><li>React Native</li><li>Flutter</li><li>FastAPI</li><li>SQLAlchemy</li><li>Firebase</li><li>Supabase</li><li>JUnit</li></ul>
+        </div>
+        <div class="tool-row">
+          <span class="tool-key">cloud &amp; tools</span>
+          <ul class="chips"><li>Docker</li><li>GCP</li><li>Vertex AI</li><li>Azure ML</li><li>Git</li><li>Unity</li><li>Figma</li><li>Claude Code</li></ul>
+        </div>
+        <div class="tool-row">
+          <span class="tool-key">certifications</span>
+          <ul class="chips chips-cert">
+            <li>ML Specialization — DeepLearning.ai / Stanford</li>
+            <li>Deep Learning — NVIDIA</li>
+            <li>Intro to ML — Kaggle</li>
+            <li>AWS AI &amp; ML Scholar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== §05 EDUCATION ===== -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-no">§ 05</span>
+        <h2>Education</h2>
+      </div>
+
+      <div class="edu-grid">
+        <article class="edu-card reveal">
+          <span class="edu-tag">m.s. · 2025 – 2027</span>
+          <h3>M.S. Computer Science</h3>
+          <p class="edu-school">Purdue University, West Lafayette</p>
+          <p class="edu-focus">Artificial intelligence · machine learning · deep learning</p>
+          <p class="edu-courses">algorithmic game theory — data mining — artificial intelligence — data engineering I — parallel computing — theoretical CS</p>
+        </article>
+
+        <article class="edu-card reveal">
+          <span class="edu-tag">b.s. · 2022 – 2026</span>
+          <h3>B.S. Computer Science, Honors</h3>
+          <p class="edu-school">Purdue University · minors in Art &amp; Design and Mathematics</p>
+          <p class="edu-focus">Machine intelligence · computer graphics · systems software · algorithmic foundations</p>
+          <p class="edu-courses">data structures &amp; algorithms — advanced algorithms — operating systems — compilers — systems programming — computer networks — computer graphics — probability — linear algebra — numerical methods</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== §06 TEACHING ===== -->
+  <section id="teaching" class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-no">§ 06</span>
+        <h2>Teaching</h2>
+        <p class="section-sub">purdue cs · aug 2023 – present</p>
+      </div>
+
+      <div class="teach-list">
+        <article class="teach-item reveal">
+          <span class="teach-code">CS 180</span>
+          <div>
+            <h3>Head Undergraduate TA — Problem Solving &amp; OOP <span class="tl-now">now</span></h3>
+            <p>Six semesters with CS180 — three as undergraduate TA, one as Student Success TA, and two as Head TA. Teaching Friday classes to 400+ students; leading labs, grading, and coordinating student concerns. Mentoring on debugging, optimization, and engineering practice in and out of office hours; as Student Success TA, provided individualized academic guidance and exam preparation.</p>
+          </div>
+        </article>
+        <article class="teach-item reveal">
+          <span class="teach-code">CS 381</span>
+          <div>
+            <h3>TA — Analysis of Algorithms <span class="teach-term">spring 2026</span></h3>
+            <p>Office hours and help sessions on asymptotic analysis, dynamic programming, graph algorithms, and proof-based reasoning; proctoring and grading for the upper-level course.</p>
+          </div>
+        </article>
+        <article class="teach-item reveal">
+          <span class="teach-code">CS 182</span>
+          <div>
+            <h3>TA — Discrete Mathematics <span class="teach-term">spring 2024</span></h3>
+            <p>Problem-solving technique and theory support, office hours, and grading.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== §07 HONORS ===== -->
+  <section id="honors" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-no">§ 07</span>
+        <h2>Honors &amp; involvement</h2>
+      </div>
+
+      <ul class="honor-list">
+        <li class="reveal"><strong>Ford Motor Company Scholarship</strong> — CS Corporate Partners, Purdue · 2024 &amp; 2025</li>
+        <li class="reveal"><strong>Pillars of Excellency Scholarship</strong> — Teaching &amp; Scholarship, Purdue · 2024</li>
+        <li class="reveal"><strong>BoilerMake Hackathon — Design Team Lead</strong>, Executive Board · feb 2023 – present</li>
+        <li class="reveal"><strong>Women in Science Program</strong> — Jandos Scholar, mentor, social media committee · aug 2022 – present</li>
+        <li class="reveal"><strong>Publication in preparation</strong> — <em>AI-Driven Walkability Ecosystem</em>, DUIRI, Purdue</li>
+        <li class="reveal"><strong>Member</strong> — Rewriting The Code · CodePath · Amazon Campus Prep Series '25</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== §08 CONTACT ===== -->
+  <section id="contact" class="section section-contact">
+    <div class="container">
+      <div class="contact-inner reveal">
+        <span class="section-no">§ 08 — correspondence</span>
+        <h2 class="contact-title">Let's make something<br /><em>that thinks and feels.</em></h2>
+        <p class="contact-sub">Open to ML/SWE opportunities, research collaborations, and good conversations about either circle of the Venn diagram.</p>
+        <div class="contact-actions">
+          <a href="mailto:singhdiya2004@gmail.com" class="btn btn-ink">singhdiya2004@gmail.com</a>
+          <a href="https://github.com/Diyasingh03" target="_blank" rel="noopener" class="btn btn-line">GitHub</a>
+          <a href="https://linkedin.com/in/diyasingh03" target="_blank" rel="noopener" class="btn btn-line">LinkedIn</a>
+          <a href="Diya_Singh_Resume.pdf" target="_blank" rel="noopener" class="btn btn-line">Résumé</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 Diya Singh · designed &amp; plotted by hand(ish)</span>
+      <span class="footer-colophon">set in Fraunces &amp; IBM Plex Mono · drawn with &lt;canvas&gt; · no frameworks were harmed</span>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
