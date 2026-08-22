@@ -47,7 +47,7 @@ Pushed to `Diyasingh03/Diyasingh03.github.io` on GitHub; `.github/workflows/depl
 
 ## Generative Plots
 
-Each project card contains a `canvas[data-plot="<kind>"]` rendered by the matching algorithm in `js/plots.js`: `rose` (Bloom), `detect` (animal detection), `tree` (Flip7 decision tree), `lissajous` (ReadCoin), `signal` (streaming), `lsystem` (procedural tree). To add a project with a plot, add a key to `PLOTS` returning `{ lines: [{pts, color, width, alpha}], dots: [{x, y, r, color}] }` and reference it from the card's `data-plot`. Plots animate on first intersection, redraw statically on resize, and re-roll on click. All motion respects `prefers-reduced-motion`.
+Each project card contains a `canvas[data-plot="<kind>"]` rendered by the matching algorithm in `js/plots.js`: `rose` (Charakbloom), `detect` (animal detection), `tree` (Flip7 decision tree), `lissajous` (ReadCoin), `signal` (streaming), `lsystem` (procedural tree). To add a project with a plot, add a key to `PLOTS` returning `{ lines: [{pts, color, width, alpha}], dots: [{x, y, r, color}] }` and reference it from the card's `data-plot`. Plots animate on first intersection, redraw statically on resize, and re-roll on click. All motion respects `prefers-reduced-motion`.
 
 ## Content Updates
 

@@ -6,7 +6,7 @@ import { INK, PINK, PURPLE, BLUE, YELLOW, wobble } from './utils.js';
 
 export const PLOTS = {
 
-  /* fig. 1 — rose curve + golden-angle phyllotaxis (Bloom) */
+  /* fig. 1 — rose curve + golden-angle phyllotaxis (Charakbloom) */
   rose(w, h, rng) {
     const lines = [], dots = [];
     const cx = w / 2, cy = h / 2, R = Math.min(w, h) * 0.40;
