@@ -3,10 +3,10 @@
 import { REDUCED_MOTION } from './utils.js';
 
 const PHRASES = [
-  'automating email triage with AI @ Envita Solutions',
   'pursuing an M.S. in Computer Science @ Purdue',
-  'teaching 400 students as Head TA of CS180',
-  'benchmarking detection models against noise',
+  'studying statistical ML, parallel computing & operating systems',
+  'looking for ML engineering & software engineering roles',
+  'writing up walking-app research for publication',
   'drawing with algorithms — like the one behind this page',
 ];
 

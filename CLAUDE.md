@@ -18,7 +18,9 @@ Then open `http://localhost:3456`. The `.claude/launch.json` is configured for t
 
 ## Deployment
 
-Pushed to `Diyasingh03/Diyasingh03.github.io` on GitHub; `.github/workflows/deploy.yml` deploys every push to `main` to GitHub Pages (custom domain in `CNAME`). **Only the Diyasingh03 GitHub account may be used** — the remote URL is pinned to `https://Diyasingh03@github.com/...` and local git identity is the Diyasingh03 noreply email; do not change either. The resume PDF is exported from `Diya_Singh_Resume.docx` (gitignored); regenerate the PDF when the docx changes.
+Pushed to `Diyasingh03/Diyasingh03.github.io` on GitHub; `.github/workflows/deploy.yml` deploys every push to `main` to GitHub Pages (custom domain in `CNAME`). **Only the Diyasingh03 GitHub account may be used** — the remote URL is pinned to `https://Diyasingh03@github.com/...` and local git identity is the Diyasingh03 noreply email; do not change either. The resume PDF is exported from `Diya_Singh_Resume.docx` (gitignored); regenerate the PDF when the docx changes. There are two résumés, both linked from the hero and contact: `Diya_Singh_Resume.pdf` ("Résumé · ML") and `Diya_Singh_EP_Resume.pdf` ("Résumé · systems").
+
+**Positioning:** the site leads with ML/AI and software engineering (C++, Python, Java are the strongest languages). Art & design is the supporting flourish, carried by the visual design and live plots, not the headline copy.
 
 ## Architecture
 
@@ -47,8 +49,8 @@ Pushed to `Diyasingh03/Diyasingh03.github.io` on GitHub; `.github/workflows/depl
 
 ## Generative Plots
 
-Each project card contains a `canvas[data-plot="<kind>"]` rendered by the matching algorithm in `js/plots.js`: `rose` (Charakbloom), `detect` (animal detection), `tree` (Flip7 decision tree), `lissajous` (ReadCoin), `signal` (streaming), `lsystem` (procedural tree). To add a project with a plot, add a key to `PLOTS` returning `{ lines: [{pts, color, width, alpha}], dots: [{x, y, r, color}] }` and reference it from the card's `data-plot`. Plots animate on first intersection, redraw statically on resize, and re-roll on click. All motion respects `prefers-reduced-motion`.
+Each project card contains a `canvas[data-plot="<kind>"]` rendered by the matching algorithm in `js/plots.js`. ML & AI group: `detect` (animal detection), `tree` (Flip7 decision tree), `rose` (Charakbloom), `lissajous` (ReadCoin). Systems & graphics group: `threads` (C++ HTTP server), `forks` (Unix shell), `signal` (streaming), `lsystem` (procedural tree). To add a project with a plot, add a key to `PLOTS` returning `{ lines: [{pts, color, width, alpha}], dots: [{x, y, r, color}] }` and reference it from the card's `data-plot`. Plots animate on first intersection, redraw statically on resize, and re-roll on click. All motion respects `prefers-reduced-motion`.
 
 ## Content Updates
 
-All content (jobs, projects, skills, education) is plain HTML in `index.html` — no CMS or data files. To add an experience item, copy a `.timeline-item` in `#chronology`. To add a project card, copy a `.work-card` inside `.works-grid` (use `.work-wide` for a full-width featured card). Keep figure numbers (`fig. n`) in `.plot-caption` sequential.
+All content (jobs, projects, skills, education) is plain HTML in `index.html` — no CMS or data files. To add an experience item, copy a `.timeline-item` in `#chronology`. To add a project card, copy a `.work-card` into the right `.works-grid` (each grid follows an `h3.works-group` heading: "machine learning & ai" or "systems & graphics"; use `.work-wide` for a full-width featured card). Keep figure numbers (`fig. n`) in `.plot-caption` sequential.

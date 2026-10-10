@@ -169,6 +169,7 @@
 .venn svg { width: 100%; height: auto; }
 .venn-a { fill: var(--pink-wash); stroke: var(--pink); stroke-width: 1.5; }
 .venn-b { fill: var(--blue-wash); stroke: var(--blue); stroke-width: 1.5; }
+.venn-c { fill: var(--purple-wash); stroke: var(--purple); stroke-width: 1.5; }
 .venn-label { font-family: var(--font-mono); font-size: 13px; fill: var(--ink-soft); text-anchor: middle; }
 .venn-me { font-family: var(--font-display); font-style: italic; font-size: 16px; fill: var(--ink); text-anchor: middle; }
 
@@ -203,6 +204,19 @@
 /* ============================================================
    §02 SELECTED WORKS
    ============================================================ */
+.works-group {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--purple);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+  margin-bottom: 32px;
+}
+.works-group span { color: var(--pink); margin-right: 6px; }
+.works-grid + .works-group { margin-top: 72px; }
 .works-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
