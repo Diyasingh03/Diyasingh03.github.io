@@ -1,0 +1,32 @@
+/* ============================================================
+   §05 EDUCATION
+   ============================================================ */
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.edu-card {
+  background: var(--paper-card);
+  border: 1px solid var(--ink);
+  padding: 32px;
+  position: relative;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.edu-card:hover { transform: translate(-3px, -3px); box-shadow: var(--shadow-print); }
+.edu-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pink);
+  display: block;
+  margin-bottom: 14px;
+}
+.edu-card h3 { font-size: 1.5rem; font-weight: 560; letter-spacing: -0.01em; margin-bottom: 6px; }
+.edu-school { font-style: italic; color: var(--ink-soft); margin-bottom: 14px; }
+.edu-focus { font-size: 0.95rem; margin-bottom: 14px; }
+.edu-courses {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  border-top: 1px dashed var(--line);
+  padding-top: 14px;
+}

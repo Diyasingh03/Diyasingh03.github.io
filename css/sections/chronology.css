@@ -1,0 +1,61 @@
+/* ============================================================
+   §03 CHRONOLOGY
+   ============================================================ */
+.timeline { display: flex; flex-direction: column; }
+.timeline-item {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 36px;
+  position: relative;
+}
+.tl-when {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  text-align: right;
+  padding-top: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.tl-now {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--paper-card);
+  background: var(--pink);
+  padding: 2px 8px;
+  display: inline-block;
+}
+.tl-what {
+  border-left: 1px solid var(--ink);
+  padding: 0 0 56px 36px;
+  position: relative;
+}
+.timeline-item:last-child .tl-what { padding-bottom: 8px; }
+.tl-what::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 10px;
+  width: 9px;
+  height: 9px;
+  background: var(--paper);
+  border: 1.5px solid var(--blue);
+  border-radius: 50%;
+}
+.timeline-item:first-child .tl-what::before { background: var(--pink); border-color: var(--pink); }
+.tl-what h3 { font-size: 1.25rem; font-weight: 560; letter-spacing: -0.01em; margin-bottom: 12px; }
+.tl-org { font-weight: 380; font-style: italic; color: var(--ink-soft); }
+.tl-what > ul:not(.chips) { margin-bottom: 14px; }
+.tl-what > ul:not(.chips) li {
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 7px;
+  max-width: 64ch;
+}
+.tl-what > ul:not(.chips) li::before { content: "—"; position: absolute; left: 0; color: var(--pink); }

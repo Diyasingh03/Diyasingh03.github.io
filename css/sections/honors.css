@@ -1,0 +1,13 @@
+/* ============================================================
+   §07 HONORS
+   ============================================================ */
+.honor-list { max-width: 760px; }
+.honor-list li {
+  position: relative;
+  padding: 18px 0 18px 34px;
+  border-bottom: 1px dashed var(--line);
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+}
+.honor-list li::before { content: "✳"; position: absolute; left: 0; top: 18px; color: var(--yellow); }
+.honor-list strong { color: var(--ink); }

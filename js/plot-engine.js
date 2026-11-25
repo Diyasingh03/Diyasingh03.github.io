@@ -3,7 +3,7 @@
    draws on first intersection and re-rolls its seed on click. */
 
 import { REDUCED_MOTION, mulberry32, randomSeed } from './utils.js';
-import { PLOTS } from './plots.js';
+import { PLOTS } from './plots/index.js';
 
 function segmentLengths(plot) {
   let total = 0;

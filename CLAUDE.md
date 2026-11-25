@@ -29,15 +29,16 @@ Pushed to `Diyasingh03/Diyasingh03.github.io` on GitHub; `.github/workflows/depl
   - `tokens.css` — all design tokens in `:root`. Grounds (`--paper`, `--paper-alt`, `--paper-card`), text inks (`--ink`, `--ink-soft`), accent inks (`--pink`, `--purple`, `--blue`, `--yellow`), washes, rules/grid, fonts, shadow, easing.
   - `base.css` — reset, body graph-grid ground, paper-grain overlay, margin rule, `.reveal` transition, `.container`.
   - `components.css` — nav, mobile menu, buttons, chips, ticker, footer, scroll-top.
-  - `sections.css` — section scaffolding plus hero and §01–§08.
+  - `sections/` — one file per section, loaded in page order: `scaffold.css` (shared `.section`/`.section-head` rules), then `hero.css`, `about.css`, `works.css`, `chronology.css`, `toolbox.css`, `education.css`, `teaching.css`, `honors.css`, `contact.css`. A new section gets its own file plus a `<link>` in `index.html` before `responsive.css`.
   - `responsive.css` — breakpoints and `prefers-reduced-motion`.
 - **`js/`** — ES modules, entry point `js/main.js` (loaded with `type="module"`):
   - `utils.js` — `REDUCED_MOTION`, ink palette read from CSS variables, `mulberry32` seeded rng, `wobble`.
   - `nav.js`, `reveal.js` — one feature each.
   - `inks.js` — the four pen pickers in the hero plate. Pens 1–3 override `--pink`/`--purple`/`--blue` on `:root` (whole page), pen 4 only inks the plot; choices persist in `localStorage` (`diya-wiki-inks`), reset restores `tokens.css`. Fires `inks:change`; `utils.js` ink colours are live `let` bindings refreshed via `refreshInks()`, and project plots redraw on the event.
-  - `hero-plotter.js` — fig. 1: flow-field pens inside a disc on `#heroCanvas` (560×640 sheet units), cursor-reactive, finishes at 360 strokes, "new edition" re-seeds.
-  - `hero-garden.js` — fig. 0: stochastic L-system plants rooted in a pixel mask of the name and steered to stay on the letters; petals use the accent classes so they follow the pens.
-  - `plots.js` — the `PLOTS` object: one generative figure algorithm per project card.
+  - Generative code is split into a pure **model** (no DOM, testable) and a thin **view** (DOM/canvas/SVG, input):
+    - `flow-field.js` — `FlowField` class: pens on a layered-sine field inside a disc, cursor bending, 360-stroke limit. View: `hero-plotter.js` (`PlateView` draws it incrementally onto `#heroCanvas`, 560×640 sheet units; pointer, "new edition", resize, re-inking).
+    - `lsystem.js` — `TextMask` (pixel mask of text), `LSystem` (stochastic grammar) and `growGarden()` (turtle that steers stems to stay on the letters). View: `hero-garden.js` (builds the SVG over the name, plant slider, regrow, `#gardenNote` footnote). Petals use the accent classes so they follow the pens.
+  - `plots/` — one generative figure per file (`rose.js`, `detect.js`, …), each exporting `<kind>(w, h, rng)`; `plots/index.js` collects them into the `PLOTS` object.
   - `plot-engine.js` — strokes a figure in progressively by path length; intersection-triggered, click-to-re-roll, resize-aware.
 
 ## Key Design Conventions
@@ -51,7 +52,7 @@ Pushed to `Diyasingh03/Diyasingh03.github.io` on GitHub; `.github/workflows/depl
 
 ## Generative Plots
 
-Each project card contains a `canvas[data-plot="<kind>"]` rendered by the matching algorithm in `js/plots.js`. ML & AI group: `detect` (animal detection), `tree` (Flip7 decision tree), `rose` (Charakbloom), `lissajous` (ReadCoin). Systems & graphics group: `threads` (C++ HTTP server), `forks` (Unix shell), `signal` (streaming), `lsystem` (procedural tree). To add a project with a plot, add a key to `PLOTS` returning `{ lines: [{pts, color, width, alpha}], dots: [{x, y, r, color}] }` and reference it from the card's `data-plot`. Plots animate on first intersection, redraw statically on resize, and re-roll on click. All motion respects `prefers-reduced-motion`.
+Each project card contains a `canvas[data-plot="<kind>"]` rendered by the matching algorithm in `js/plots/<kind>.js`. ML & AI group: `detect` (animal detection), `tree` (Flip7 decision tree), `rose` (Charakbloom), `lissajous` (ReadCoin). Systems & graphics group: `threads` (C++ HTTP server), `forks` (Unix shell), `signal` (streaming), `lsystem` (procedural tree). To add a project with a plot, create `js/plots/<kind>.js` exporting `<kind>(w, h, rng)`, register it in `js/plots/index.js`, returning `{ lines: [{pts, color, width, alpha}], dots: [{x, y, r, color}] }` and reference it from the card's `data-plot`. Plots animate on first intersection, redraw statically on resize, and re-roll on click. All motion respects `prefers-reduced-motion`.
 
 ## Content Updates
 
