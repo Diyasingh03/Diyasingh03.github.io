@@ -34,16 +34,19 @@ Pushed to `Diyasingh03/Diyasingh03.github.io` on GitHub; `.github/workflows/depl
 - **`js/`** — ES modules, entry point `js/main.js` (loaded with `type="module"`):
   - `utils.js` — `REDUCED_MOTION`, ink palette read from CSS variables, `mulberry32` seeded rng, `wobble`.
   - `nav.js`, `reveal.js` — one feature each.
+  - `theme.js` — light/dark mode. An inline script in `<head>` sets `<html data-theme>` before first paint (saved choice in `localStorage` `diya-wiki-theme`, else `prefers-color-scheme`); this module runs the nav's sun/moon `#themeToggle`, keeps following the system until the visitor chooses, and fires `theme:change`. Dark values are a `:root[data-theme="dark"]` block at the end of `tokens.css` — every color token must have a dark value there.
   - `inks.js` — the four pen pickers in the hero plate. Pens 1–3 override `--pink`/`--purple`/`--blue` on `:root` (whole page), pen 4 only inks the plot; choices persist in `localStorage` (`diya-wiki-inks`), reset restores `tokens.css`. Fires `inks:change`; `utils.js` ink colours are live `let` bindings refreshed via `refreshInks()`, and project plots redraw on the event.
   - Generative code is split into a pure **model** (no DOM, testable) and a thin **view** (DOM/canvas/SVG, input):
     - `flow-field.js` — `FlowField` class: pens on a layered-sine field inside a disc, cursor bending, 360-stroke limit. View: `hero-plotter.js` (`PlateView` draws it incrementally onto `#heroCanvas`, 560×640 sheet units; pointer, "new edition", resize, re-inking).
+    - `butterfly-swarm.js` — `ButterflySwarm`/`Butterfly`: wandering, edge-avoiding, cursor-shy butterflies with flapping phase and a short trail. View: `hero-butterflies.js` (a click-through canvas over the hero, glowing in `--blue` so pen 3 recolours them; off for reduced motion, paused off screen).
+    - `meadow.js` — `growMeadow(cx, cy)`: grass, leafy vines and flowers laid out around a point, each with a birth time that grows with distance so it spreads in rings. View: `idle-meadow.js` (a fixed click-through canvas at `z-index: -1`, *behind* all content so text stays readable; meadows are page-anchored and scroll with the page. Resting the mouse 3 s grows one at the cursor that fades on the next move (mouse only, off for reduced motion); clicking empty background — anything not matching `NOT_BACKGROUND` — plants one that stays, up to 5. Grass/leaves use `--leaf`).
     - `lsystem.js` — `TextMask` (pixel mask of text), `LSystem` (stochastic grammar) and `growGarden()` (turtle that steers stems to stay on the letters). View: `hero-garden.js` (builds the SVG over the name, plant slider, regrow, `#gardenNote` footnote). Petals use the accent classes so they follow the pens.
   - `plots/` — one generative figure per file (`rose.js`, `detect.js`, …), each exporting `<kind>(w, h, rng)`; `plots/index.js` collects them into the `PLOTS` object.
   - `plot-engine.js` — strokes a figure in progressively by path length; intersection-triggered, click-to-re-roll, resize-aware.
 
 ## Key Design Conventions
 
-- All color/shadow values must use CSS variables from `css/tokens.css` — never hardcode hex values elsewhere.
+- All color/shadow values must use CSS variables from `css/tokens.css` — never hardcode hex values elsewhere. This is what makes dark mode work: a new color token needs both a light value and a dark value.
 - Ink roles: `--pink` = annotation/art (section numbers, captions, "now" badges, margin rule), `--purple` = logic (links, badges, active states), `--blue` = structure (curves, timeline dots), `--yellow` = honors (cert chips, honor asterisks). The hard offset shadow (`box-shadow: 4px 4px 0 …`) gives the letterpress feel.
 - Scroll-reveal: add class `reveal` to any element; `js/reveal.js` adds `visible` on intersection. Hero `.reveal` elements fire immediately via `setTimeout` stagger instead.
 - Tags are `.chips` lists (`<ul class="chips"><li>…</li></ul>`); variants `.chips-sm` (smaller) and `.chips-cert` (yellow, certifications).

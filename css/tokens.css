@@ -10,6 +10,7 @@
   --paper-alt:  #e0cef4;   /* pastel lavender sheet         */
   --paper-card: #ffe8e8;   /* blush card sheet              */
   --paper-sheet: #fff8e8;  /* hero plotter sheet            */
+  --glow:       #ffffff;   /* butterfly glow                */
 
   /* text inks */
   --ink:        #2a2140;   /* plum ink — headings, body     */
@@ -20,6 +21,7 @@
   --purple:     #8b6ed0;   /* logic ink — links, badges     */
   --blue:       #5b8ed6;   /* structure ink — curves, dots  */
   --yellow:     #e78a00;   /* gilding — honors, certs       */
+  --leaf:       #6f9b68;   /* idle meadow: grass & leaves   */
 
   /* soft fills (for washes behind shapes) */
   --pink-wash:   rgba(215, 111, 167, 0.12);
@@ -45,4 +47,41 @@
   --shadow-print: 5px 5px 0 rgba(139, 110, 208, 0.16);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --container: 1120px;
+}
+
+/* ------------------------------------------------------------
+   DARK MODE — the notebook at night. set by js/theme.js (and the
+   inline script in <head>) as <html data-theme="dark">: deep plum
+   paper, cream ink, the same pastel inks a little brighter.
+   ------------------------------------------------------------ */
+:root { color-scheme: light; }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --paper:       #17131f;
+  --paper-alt:   #211a30;
+  --paper-card:  #2a2138;
+  --paper-sheet: #1f1a2b;
+  --glow:        #ffffff;
+
+  --ink:         #f3ead8;
+  --ink-soft:    #b8acd3;
+
+  --pink:        #f08cc0;
+  --purple:      #ab92f0;
+  --blue:        #7eaef2;
+  --yellow:      #f5a83c;
+  --leaf:        #8fc487;
+
+  --pink-wash:   rgba(240, 140, 192, 0.14);
+  --purple-wash: rgba(171, 146, 240, 0.14);
+  --blue-wash:   rgba(126, 174, 242, 0.14);
+
+  --line:        rgba(243, 234, 216, 0.16);
+  --line-soft:   rgba(243, 234, 216, 0.08);
+  --line-strong: rgba(243, 234, 216, 0.45);
+  --grid:        rgba(171, 146, 240, 0.07);
+  --grid-major:  rgba(171, 146, 240, 0.12);
+
+  --shadow-print: 5px 5px 0 rgba(171, 146, 240, 0.18);
 }

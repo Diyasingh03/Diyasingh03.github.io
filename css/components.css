@@ -49,6 +49,28 @@
 }
 .nav-cta:hover { background: var(--ink); color: var(--paper-card); box-shadow: 3px 3px 0 var(--pink); }
 
+/* dark-mode toggle: a moon in light mode, a sun in dark mode */
+.nav-end { display: flex; align-items: center; gap: 10px; margin-left: 22px; }
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.3s var(--ease);
+}
+.theme-toggle:hover { border-color: var(--purple); color: var(--purple); transform: rotate(-15deg); }
+.theme-toggle:focus-visible { outline: 2px solid var(--purple); outline-offset: 3px; }
+.theme-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -167,3 +189,13 @@
 }
 .scroll-top.show { opacity: 1; pointer-events: auto; }
 .scroll-top:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--pink); }
+
+/* ---------- idle meadow (grows where the cursor rests) ---------- */
+#idleMeadow {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1; /* behind all page content: text and cards always stay on top */
+}

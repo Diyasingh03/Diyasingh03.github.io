@@ -21,6 +21,7 @@ body {
   background-size: 140px 140px, 140px 140px, 28px 28px, 28px 28px;
   line-height: 1.6;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* paper grain */

@@ -1,7 +1,9 @@
 /* the four pens in the hero plate. pens 1–3 re-ink the whole page
-   (--pink, --purple, --blue); pen 4 is the plotter's dark ink and
-   only colours the flow field. a visitor's choice is remembered in
-   their browser; reset restores the colours from tokens.css. */
+   (--pink, --purple, --blue); pen 4 is the plotter's ink and only
+   colours the flow field. a visitor's choice is remembered in their
+   browser; reset restores the colours from tokens.css. each theme has
+   its own defaults: on a light/dark switch, pens still at the old
+   theme's default move to the new one, picked pens stay as picked. */
 
 import { refreshInks } from './utils.js';
 
@@ -12,9 +14,15 @@ const PAGE_PENS = 3; // pens that re-ink the page, not just the plot
 let defaults = [];
 let pens = [];
 
+/* the theme's own colours: read with the visitor's overrides lifted */
 function readDefaults() {
+  const style = document.documentElement.style;
+  const held = VARS.map((v) => style.getPropertyValue(v));
+  VARS.forEach((v) => style.removeProperty(v));
   const css = getComputedStyle(document.documentElement);
-  return VARS.map((v) => toHex(css.getPropertyValue(v).trim()));
+  const values = VARS.map((v) => toHex(css.getPropertyValue(v).trim()));
+  VARS.forEach((v, i) => { if (held[i]) style.setProperty(v, held[i]); });
+  return values;
 }
 
 /* <input type="color"> only takes #rrggbb */
@@ -26,18 +34,22 @@ function toHex(color) {
   return '#' + m.slice(0, 3).map((n) => Number(n).toString(16).padStart(2, '0')).join('');
 }
 
+/* saved as [pen or null]: null means "this theme's default" */
 function load() {
   try {
     const saved = JSON.parse(localStorage.getItem(KEY) || 'null');
-    if (Array.isArray(saved) && saved.length === 4 && saved.every((c) => /^#[0-9a-f]{6}$/i.test(c))) return saved;
+    if (Array.isArray(saved) && saved.length === 4) {
+      return saved.map((c, i) => (typeof c === 'string' && /^#[0-9a-f]{6}$/i.test(c) ? c : defaults[i]));
+    }
   } catch (e) { /* private mode or blocked storage: use the defaults */ }
   return null;
 }
 
 function save() {
   try {
-    if (pens.every((c, i) => c === defaults[i])) localStorage.removeItem(KEY);
-    else localStorage.setItem(KEY, JSON.stringify(pens));
+    const picked = pens.map((c, i) => (c === defaults[i] ? null : c));
+    if (picked.every((c) => c === null)) localStorage.removeItem(KEY);
+    else localStorage.setItem(KEY, JSON.stringify(picked));
   } catch (e) { /* storage unavailable: the choice lasts for this visit only */ }
 }
 
@@ -70,6 +82,14 @@ export function initInks() {
       apply();
       save();
     });
+  });
+
+  // light/dark switch: untouched pens follow the new theme's defaults
+  document.addEventListener('theme:change', () => {
+    const before = defaults;
+    defaults = readDefaults();
+    pens = pens.map((c, i) => (c === before[i] ? defaults[i] : c));
+    apply();
   });
 
   const reset = document.getElementById('inkReset');
