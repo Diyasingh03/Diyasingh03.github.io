@@ -2,6 +2,17 @@
    RESPONSIVE + REDUCED MOTION
    ============================================================ */
 
+@media (max-width: 1100px) {
+  .hero { min-height: 0; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .hero-plate { width: 100%; max-width: 560px; }
+}
+
+@container (max-width: 420px) {
+  .plate-inks { left: 40%; }
+  .plate-pens { display: none; }
+}
+
 @media (max-width: 920px) {
   .about-grid { grid-template-columns: 1fr; gap: 44px; }
   .works-grid { grid-template-columns: 1fr; }
@@ -11,6 +22,8 @@
 }
 
 @media (max-width: 760px) {
+  .hero { padding-top: 96px; }
+  .hero-grid, .hero-footnote { padding: 0 20px; }
   .margin-rule { left: 22px; }
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
@@ -20,7 +33,6 @@
   .tl-what { padding-left: 36px; padding-bottom: 44px; }
   .tool-row { grid-template-columns: 1fr; gap: 12px; }
   .teach-item { grid-template-columns: 1fr; gap: 8px; }
-  .scroll-cue { display: none; }
   .work-wide .work-body { padding: 26px 28px 28px; }
 }
 
@@ -28,5 +40,6 @@
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .ticker-track { animation: none; }
-  .typed-caret, .scroll-cue i { animation: none; }
+  .garden-stem { animation: none; stroke-dashoffset: 0; }
+  .garden-flower { animation: none; transform: none; }
 }

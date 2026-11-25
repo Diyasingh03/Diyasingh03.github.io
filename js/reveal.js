@@ -2,7 +2,7 @@
    everything else reveals on intersection */
 
 export function initReveal() {
-  document.querySelectorAll('.hero .reveal, .hero-footnote').forEach((el, i) =>
+  document.querySelectorAll('.hero .reveal').forEach((el, i) =>
     setTimeout(() => el.classList.add('visible'), 120 + i * 130)
   );
 

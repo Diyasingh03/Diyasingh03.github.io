@@ -9,6 +9,7 @@
   --paper:      #ffefcb;   /* warm cream ground             */
   --paper-alt:  #e0cef4;   /* pastel lavender sheet         */
   --paper-card: #ffe8e8;   /* blush card sheet              */
+  --paper-sheet: #fff8e8;  /* hero plotter sheet            */
 
   /* text inks */
   --ink:        #2a2140;   /* plum ink — headings, body     */
@@ -24,16 +25,21 @@
   --pink-wash:   rgba(215, 111, 167, 0.12);
   --purple-wash: rgba(139, 110, 208, 0.12);
   --blue-wash:   rgba(91, 142, 214, 0.12);
+  --purple-wash-strong: color-mix(in srgb, var(--purple) 35%, transparent);
 
   /* rules & grid */
   --line:       rgba(67, 58, 89, 0.18);
   --line-soft:  rgba(67, 58, 89, 0.10);
+  --line-strong: rgba(42, 33, 64, 0.5);
   --grid:       rgba(139, 110, 208, 0.08);
   --grid-major: rgba(139, 110, 208, 0.14);
 
   /* type */
   --font-display: "Fraunces", "Georgia", serif;
   --font-mono: "IBM Plex Mono", "Courier New", monospace;
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", sans-serif;   /* hero wall label */
+  --font-name: "Inter", "Helvetica Neue", sans-serif;           /* name garden     */
+  --font-caption: "Newsreader", "Georgia", serif;               /* plate captions  */
 
   /* misc */
   --shadow-print: 5px 5px 0 rgba(139, 110, 208, 0.16);

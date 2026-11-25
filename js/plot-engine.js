@@ -99,6 +99,7 @@ function initPlotCanvas(canvas) {
     (entries) => {
       if (entries[0].isIntersecting) {
         render(true);
+        canvas.dispatchEvent(new Event('plot:drawn'));
         once.disconnect();
       }
     },
@@ -117,6 +118,11 @@ function initPlotCanvas(canvas) {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => render(false), 250);
   });
+
+  // the visitor re-inked the pens in the hero: redraw in the new colours
+  let drawn = false;
+  canvas.addEventListener('plot:drawn', () => { drawn = true; });
+  document.addEventListener('inks:change', () => { if (drawn) render(false); });
 }
 
 export function initProjectPlots() {

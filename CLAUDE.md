@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Static personal portfolio website for Diya Singh, served at https://diya.wiki. No build step, no package manager — pure HTML, CSS, and vanilla JS (ES modules) served directly.
 
-**Design concept: "The Plotter's Notebook" (pastel edition).** A mathematician-artist's working notebook on a warm white/cream ground with a graph-grid. Pastel inks: pink (art/annotation), purple (logic/links), blue (structure/curves), and a little yellow (honors/gilding); plum ink for text. Generative pen-plotter art is drawn live in `<canvas>`. Typography is Fraunces (variable serif) and IBM Plex Mono (annotations, labels, dates, chips).
+**Design concept: "The Plotter's Notebook" (pastel edition).** A mathematician-artist's working notebook on a warm white/cream ground with a graph-grid. Pastel inks: pink (art/annotation), purple (logic/links), blue (structure/curves), and a little yellow (honors/gilding); plum ink for text. Generative pen-plotter art is drawn live in `<canvas>`. Typography is Fraunces (variable serif) and IBM Plex Mono (annotations, labels, dates, chips); the hero alone also uses Inter (the name garden), IBM Plex Sans (wall-label description) and Newsreader italic (plate caption).
 
 ## Dev Server
 
@@ -24,7 +24,7 @@ Pushed to `Diyasingh03/Diyasingh03.github.io` on GitHub; `.github/workflows/depl
 
 ## Architecture
 
-- **`index.html`** — single page, content hardcoded. Sections in order: `#hero → ticker → #about → #works → #chronology → #toolbox → #education → #teaching → #honors → #contact → footer`, numbered like a paper (`§ 01` …) via `.section-no`.
+- **`index.html`** — single page, content hardcoded. The hero is two columns: fig. 0, the name garden (`#heroGarden` svg + plant slider + regrow), the wall-label description, buttons and links on the left; fig. 1, the flow-field plate (`#plateSheet`: canvas, registration-mark svg, four pen pickers, reset) on the right; a pink footnote (`#gardenNote`) reports the garden's live numbers. Sections in order: `#hero → ticker → #about → #works → #chronology → #toolbox → #education → #teaching → #honors → #contact → footer`, numbered like a paper (`§ 01` …) via `.section-no`.
 - **`css/`** — one stylesheet per concern, loaded in order from `index.html`:
   - `tokens.css` — all design tokens in `:root`. Grounds (`--paper`, `--paper-alt`, `--paper-card`), text inks (`--ink`, `--ink-soft`), accent inks (`--pink`, `--purple`, `--blue`, `--yellow`), washes, rules/grid, fonts, shadow, easing.
   - `base.css` — reset, body graph-grid ground, paper-grain overlay, margin rule, `.reveal` transition, `.container`.
@@ -33,8 +33,10 @@ Pushed to `Diyasingh03/Diyasingh03.github.io` on GitHub; `.github/workflows/depl
   - `responsive.css` — breakpoints and `prefers-reduced-motion`.
 - **`js/`** — ES modules, entry point `js/main.js` (loaded with `type="module"`):
   - `utils.js` — `REDUCED_MOTION`, ink palette read from CSS variables, `mulberry32` seeded rng, `wobble`.
-  - `nav.js`, `typewriter.js`, `reveal.js` — one feature each.
-  - `hero-plotter.js` — flow-field pens drawing `#heroCanvas` live.
+  - `nav.js`, `reveal.js` — one feature each.
+  - `inks.js` — the four pen pickers in the hero plate. Pens 1–3 override `--pink`/`--purple`/`--blue` on `:root` (whole page), pen 4 only inks the plot; choices persist in `localStorage` (`diya-wiki-inks`), reset restores `tokens.css`. Fires `inks:change`; `utils.js` ink colours are live `let` bindings refreshed via `refreshInks()`, and project plots redraw on the event.
+  - `hero-plotter.js` — fig. 1: flow-field pens inside a disc on `#heroCanvas` (560×640 sheet units), cursor-reactive, finishes at 360 strokes, "new edition" re-seeds.
+  - `hero-garden.js` — fig. 0: stochastic L-system plants rooted in a pixel mask of the name and steered to stay on the letters; petals use the accent classes so they follow the pens.
   - `plots.js` — the `PLOTS` object: one generative figure algorithm per project card.
   - `plot-engine.js` — strokes a figure in progressively by path length; intersection-triggered, click-to-re-roll, resize-aware.
 

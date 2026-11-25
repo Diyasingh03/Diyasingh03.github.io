@@ -2,13 +2,25 @@
 
 export const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* read the inks from :root so CSS stays the single source of truth */
-const css = getComputedStyle(document.documentElement);
-export const INK    = css.getPropertyValue('--ink').trim()    || '#2a2140';
-export const PINK   = css.getPropertyValue('--pink').trim()   || '#d76fa7';
-export const PURPLE = css.getPropertyValue('--purple').trim() || '#8b6ed0';
-export const BLUE   = css.getPropertyValue('--blue').trim()   || '#5b8ed6';
-export const YELLOW = css.getPropertyValue('--yellow').trim() || '#e78a00';
+/* read the inks from :root so CSS stays the single source of truth.
+   these are live bindings: refreshInks() re-reads them after the
+   visitor picks new pens in the hero (see inks.js). */
+function readVar(name, fallback) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
+}
+export let INK    = readVar('--ink', '#2a2140');
+export let PINK   = readVar('--pink', '#d76fa7');
+export let PURPLE = readVar('--purple', '#8b6ed0');
+export let BLUE   = readVar('--blue', '#5b8ed6');
+export let YELLOW = readVar('--yellow', '#e78a00');
+
+export function refreshInks() {
+  INK = readVar('--ink', INK);
+  PINK = readVar('--pink', PINK);
+  PURPLE = readVar('--purple', PURPLE);
+  BLUE = readVar('--blue', BLUE);
+  YELLOW = readVar('--yellow', YELLOW);
+}
 
 /* seeded rng (mulberry32) so each plot is reproducible per seed */
 export function mulberry32(seed) {

@@ -10,7 +10,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500&family=Inter:wght@700&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/components.css" />
@@ -53,47 +53,93 @@
     </ul>
   </div>
 
-  <!-- ===== HERO · fig. 0 ===== -->
+  <!-- ===== HERO · fig. 0 + fig. 1 ===== -->
   <header id="hero" class="hero">
-    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-grid">
 
-    <div class="hero-content">
-      <p class="hero-kicker reveal">fig. 0 — <em>a self-portrait, computed</em></p>
-      <h1 class="hero-name reveal">
-        Diya<br /><span class="hero-name-line2">Singh<span class="hero-asterisk">*</span></span>
-      </h1>
-      <p class="hero-thesis reveal">
-        I build <strong>machine-learning systems</strong> and the <strong>software underneath them</strong>
-        — in <strong>C++</strong>, <strong>Python</strong>, and <strong>Java</strong>. Minors in mathematics
-        and art &amp; design keep the work <em>precise, and on purpose.</em>
-      </p>
-      <p class="hero-typed-line reveal">
-        <span class="typed-prefix">currently&nbsp;</span><span id="typedText"></span><span class="typed-caret">▌</span>
-      </p>
-      <div class="hero-actions reveal">
-        <a href="#works" class="btn btn-ink">Selected works ↓</a>
-        <a href="Diya_Singh_Resume.pdf" target="_blank" rel="noopener" class="btn btn-line">Résumé · ML</a>
-        <a href="Diya_Singh_EP_Resume.pdf" target="_blank" rel="noopener" class="btn btn-line">Résumé · systems</a>
+      <div class="hero-text">
+        <div class="hero-name-block reveal">
+          <h1 class="hero-name" aria-label="Diya Singh">
+            <svg id="heroGarden" viewBox="0 225 1020 230" aria-hidden="true">
+              <text class="garden-name" x="0" y="380">Diya Singh</text>
+              <g id="gardenLayer"></g>
+            </svg>
+          </h1>
+          <div class="garden-controls">
+            <span>fig. 0 — a garden grown over the name</span>
+            <label class="garden-density">
+              <span>plants</span>
+              <input type="range" id="gardenPlants" min="4" max="40" step="1" value="12" aria-label="Number of plants in the garden" />
+              <output id="gardenPlantsOut" for="gardenPlants">12</output>
+            </label>
+            <button type="button" class="text-btn" id="gardenRegrow">regrow ↻</button>
+          </div>
+        </div>
+
+        <div class="hero-label reveal">
+          <span class="hero-label-kicker">ENGINEER · PURDUE CS</span>
+          <span class="hero-label-meta">Machine learning, systems software · C++, Python, Java</span>
+          <p>Builds machine-learning systems and the software underneath them. Currently completing an M.S. in computer science (2027).</p>
+        </div>
+
+        <div class="hero-actions reveal">
+          <a href="#works" class="btn btn-ink">Selected works</a>
+          <a href="Diya_Singh_Resume.pdf" target="_blank" rel="noopener" class="btn btn-line">Résumé · ML</a>
+          <a href="Diya_Singh_EP_Resume.pdf" target="_blank" rel="noopener" class="btn btn-line">Résumé · systems</a>
+        </div>
+
+        <p class="hero-socials reveal">
+          <a href="https://github.com/Diyasingh03" target="_blank" rel="noopener">github</a>
+          <a href="https://linkedin.com/in/diyasingh03" target="_blank" rel="noopener">linkedin</a>
+          <a href="mailto:singhdiya2004@gmail.com">email</a>
+        </p>
       </div>
-      <p class="hero-socials reveal">
-        <a href="https://github.com/Diyasingh03" target="_blank" rel="noopener">GitHub</a>
-        <span aria-hidden="true">·</span>
-        <a href="https://linkedin.com/in/diyasingh03" target="_blank" rel="noopener">LinkedIn</a>
-        <span aria-hidden="true">·</span>
-        <a href="mailto:singhdiya2004@gmail.com">singhdiya2004@gmail.com</a>
-      </p>
+
+      <figure class="hero-plate reveal">
+        <div class="plate-sheet" id="plateSheet">
+          <canvas id="heroCanvas" aria-hidden="true"></canvas>
+          <svg class="plate-marks" viewBox="0 0 560 640" aria-hidden="true">
+            <g class="reg">
+              <path d="M20 40H44M32 28V52" /><path d="M516 40H540M528 28V52" />
+              <path d="M20 600H44M32 588V612" /><path d="M516 600H540M528 588V612" />
+              <circle cx="32" cy="40" r="6" /><circle cx="528" cy="40" r="6" />
+              <circle cx="32" cy="600" r="6" /><circle cx="528" cy="600" r="6" />
+            </g>
+            <circle class="ring ring-inner" cx="280" cy="300" r="214" />
+            <circle class="ring ring-outer" cx="280" cy="300" r="222" />
+            <path class="scale-bar" d="M66 560V572M86 564V572M106 564V572M126 564V572M146 560V572M166 564V572M186 564V572M206 564V572M226 560V572M66 572H226" />
+          </svg>
+          <span class="plate-note plate-scale">0 — 160 mm</span>
+          <div class="plate-inks">
+            <label class="ink-well"><input type="color" data-pen="0" aria-label="Pen 1 colour (pink accent)" /></label>
+            <label class="ink-well"><input type="color" data-pen="1" aria-label="Pen 2 colour (purple accent)" /></label>
+            <label class="ink-well"><input type="color" data-pen="2" aria-label="Pen 3 colour (blue accent)" /></label>
+            <label class="ink-well"><input type="color" data-pen="3" aria-label="Pen 4 colour (ink)" /></label>
+            <button type="button" class="text-btn" id="inkReset" aria-label="Reset all four pens to the default colours">reset</button>
+          </div>
+          <span class="plate-note plate-pens">4 pens · pick your inks</span>
+        </div>
+        <figcaption class="plate-caption">
+          <span class="plate-title">Flow field, no. <span id="plateSeed"></span></span>
+          <button type="button" class="text-btn" id="plateReroll">new edition ↻</button>
+        </figcaption>
+      </figure>
+
     </div>
 
-    <p class="hero-footnote reveal">* the curves behind this page are drawn live by a flow field — refresh for a new edition</p>
-
-    <div class="scroll-cue" aria-hidden="true"><span>scroll</span><i></i></div>
+    <p class="hero-footnote reveal" id="gardenNote">
+      stochastic L-system, 4 rules for F, 3 generations ·
+      <span data-note="plants">12</span> plants ·
+      <span data-note="flowers">0</span> flowers ·
+      seed <span data-note="seed">7</span>
+    </p>
   </header>
 
   <!-- ===== TICKER ===== -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>Purdue CS</span><i>✳</i><span>M.S. by 2027</span><i>✳</i><span>C++ · Python · Java</span><i>✳</i><span>99.12% classification accuracy in prod</span><i>✳</i><span>2,000+ emails / min</span><i>✳</i><span>180+ tests written</span><i>✳</i><span>thread-pool HTTP server in C++</span><i>✳</i><span>2M+ reviews mined</span><i>✳</i><span>HackMIT finalist</span><i>✳</i><span>400 students taught</span><i>✳</i><span>art &amp; design minor</span><i>✳</i>
-      <span>Purdue CS</span><i>✳</i><span>M.S. by 2027</span><i>✳</i><span>C++ · Python · Java</span><i>✳</i><span>99.12% classification accuracy in prod</span><i>✳</i><span>2,000+ emails / min</span><i>✳</i><span>180+ tests written</span><i>✳</i><span>thread-pool HTTP server in C++</span><i>✳</i><span>2M+ reviews mined</span><i>✳</i><span>HackMIT finalist</span><i>✳</i><span>400 students taught</span><i>✳</i><span>art &amp; design minor</span><i>✳</i>
+      <span>Purdue CS</span><i>✳</i><span>M.S. by 2027</span><i>✳</i><span>C++ · Python · Java</span><i>✳</i><span>99.12% classification accuracy in prod</span><i>✳</i><span>thread-pool HTTP server in C++</span><i>✳</i><span>2M+ reviews mined</span><i>✳</i><span>HackMIT finalist</span><i>✳</i><span>400 students taught</span><i>✳</i><span>art &amp; design minor</span><i>✳</i>
+      <span>Purdue CS</span><i>✳</i><span>M.S. by 2027</span><i>✳</i><span>C++ · Python · Java</span><i>✳</i><span>99.12% classification accuracy in prod</span><i>✳</i><span>thread-pool HTTP server in C++</span><i>✳</i><span>2M+ reviews mined</span><i>✳</i><span>HackMIT finalist</span><i>✳</i><span>400 students taught</span><i>✳</i><span>art &amp; design minor</span><i>✳</i>
     </div>
   </div>
 
@@ -115,8 +161,8 @@
             I'm an M.S. Computer Science student at <strong>Purdue University</strong> (B.S. CS '26,
             M.S. '27) working where <strong>machine learning</strong> meets <strong>systems software</strong>.
             My strongest languages are <strong>C++</strong>, <strong>Python</strong>, and <strong>Java</strong>:
-            I've written an HTTP/1.1 server on raw POSIX sockets, a Unix shell with job control, and ML
-            pipelines that run in production.
+            I've written a concurrent binary search tree with fine-grained pthread locking (benchmarked
+            up to 128 threads), a Unix shell with job control, and ML pipelines that run in production.
           </p>
           <p>
             Most recently, at <strong>Envita Solutions</strong>, I built an end-to-end Python email-classification
@@ -150,11 +196,10 @@
             <div><dt>languages</dt><dd>C++ · Python · Java</dd></div>
             <div><dt>in prod</dt><dd>2,000+ emails/min, 99.12%</dd></div>
             <div><dt>roles</dt><dd>7 internships + research</dd></div>
-            <div><dt>teaching</dt><dd>head TA, 400 students</dd></div>
+            <div><dt>teaching</dt><dd>head TA, 400+ students</dd></div>
             <div><dt>minors</dt><dd>math, art &amp; design</dd></div>
             <div><dt>status</dt><dd class="fact-now">open to ML / SWE roles</dd></div>
           </dl>
-          <p class="aside-note">↑ verified against the résumés, oct 2026</p>
         </aside>
       </div>
     </div>
@@ -578,8 +623,8 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container footer-inner">
-      <span>© 2026 Diya Singh · designed &amp; plotted by hand(ish)</span>
-      <span class="footer-colophon">set in Fraunces &amp; IBM Plex Mono · drawn with &lt;canvas&gt; · no frameworks were harmed</span>
+      <span>© 2026 Diya Singh</span>
+      <span class="footer-colophon">set in Fraunces, Inter, Newsreader &amp; IBM Plex · no frameworks were harmed</span>
     </div>
   </footer>
 
